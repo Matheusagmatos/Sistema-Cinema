@@ -1,15 +1,15 @@
-public class Compra {
+public abstract class Compra {
 
     
-    public void novaCompra(){
+    public static void novaCompra(){
+      
+    }
+
+    public static void cancelarCompra(){
 
     }
 
-    public void cancelarCompra(){
-
-    }
-
-    public void infosCompra(){
+    public static void infosCompra(){
 
     }
 
