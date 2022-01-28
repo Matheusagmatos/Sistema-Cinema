@@ -57,11 +57,42 @@ public class Filme {
         
     }
 
-    public static void removerFilme(){
+
+    public static void pesquisarFilme(){
+       System.out.println("CÓDIGO DO FILME:");
+       int codDigitado = input.nextInt();
+
+       for(int i = 0; i <= listaFilmes.size(); i++){
+         if(codDigitado == listaFilmes.get(i).codigo){
+            System.out.println("----------------------------");
+            System.out.println("TÍTULO: " + listaFilmes.get(i).titulo);
+            System.out.println("GÊNERO: " + listaFilmes.get(i).genero);
+            System.out.println("DURAÇÃO: " + listaFilmes.get(i).duracao);
+            System.out.println("----------------------------");
+         }
+       }
 
     }
 
-    public static void infosFilme(){
+ 
+
+
+    public static void removerFilme(){
+        System.out.println("CÓDIGO DO FILME:");
+        int codDigitado = input.nextInt();
+ 
+        for(int i = 0; i <= listaFilmes.size(); i++){
+          if(codDigitado == listaFilmes.get(i).codigo){
+             listaFilmes.remove(i);
+             System.out.println("Filme removido com sucesso!");
+             break;
+          }
+        }
+    }
+
+
+
+    public static void filmesEmCartaz(){
       
       for(int i = 0; i <= listaFilmes.size(); i++){
           System.out.print("-----------------------\nTÍTULO: " + listaFilmes.get(i).titulo + "\n GÊNERO: " + listaFilmes.get(i).genero + "\n DURAÇÃO: " + listaFilmes.get(i).duracao + "\n-----------------------");
