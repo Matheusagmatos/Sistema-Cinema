@@ -35,6 +35,7 @@ public class Filme {
         do{
         
          codGerado = aleatory.nextInt(100000);
+
          for(int i = 0; i < listaFilmes.size(); i++){
             if (listaFilmes.get(i).codigo == codGerado){
                codExiste = true;
