@@ -16,9 +16,12 @@ public class Filme {
     static Scanner input = new Scanner(System.in);
 
 
-    public static void adicionarFilme(){
+    public static void adicionarFilme(String[] args){
+      boolean continuarAdicionandoFilmes = false;
+      do{
         Filme novoFilme = new Filme();
-
+         
+         input.nextLine();
         System.out.println("TÍTULO: ");
          novoFilme.titulo = input.nextLine();
         System.out.println("GÊNERO: ");
@@ -26,20 +29,21 @@ public class Filme {
         System.out.println("DURAÇÃO");
          novoFilme.duracao = input.nextLine();
         
+         int codGerado;
          boolean codExiste = false;
-         int codFilme;
+         
         do{
         
-         codFilme = aleatory.nextInt(100000);
-         for(int i = 0; i <= listaFilmes.size(); i++){
-            if (listaFilmes.get(i).codigo == codFilme){
+         codGerado = aleatory.nextInt(100000);
+         for(int i = 0; i < listaFilmes.size(); i++){
+            if (listaFilmes.get(i).codigo == codGerado){
                codExiste = true;
             }
          }
 
         }while(codExiste = true);
 
-        novoFilme.codigo = codFilme;
+        novoFilme.codigo = codGerado;
 
 
         listaFilmes.add(novoFilme);
@@ -53,12 +57,24 @@ public class Filme {
         System.out.println("DURAÇÃO: " + novoFilme.duracao);
         System.out.println("----------------------------");
 
+        Menu.main(args);
 
+        System.out.println("Adiconar mais filmes ? 1-sim, 2-não");
+         int option = input.nextInt();
+          if(option == 1){
+            continuarAdicionandoFilmes = true;
+          }else{
+            continuarAdicionandoFilmes = true;
+          }
+
+      }while(continuarAdicionandoFilmes = true);
+
+      Filme.filmesEmCartaz(args);
         
     }
 
 
-    public static void pesquisarFilme(){
+    public static void pesquisarFilme(String[] args){
        System.out.println("CÓDIGO DO FILME:");
        int codDigitado = input.nextInt();
 
@@ -77,7 +93,7 @@ public class Filme {
  
 
 
-    public static void removerFilme(){
+    public static void removerFilme(String[] args){
         System.out.println("CÓDIGO DO FILME:");
         int codDigitado = input.nextInt();
  
@@ -92,7 +108,7 @@ public class Filme {
 
 
 
-    public static void filmesEmCartaz(){
+    public static void filmesEmCartaz(String[] args){
       
       for(int i = 0; i <= listaFilmes.size(); i++){
           System.out.print("-----------------------\nTÍTULO: " + listaFilmes.get(i).titulo + "\n GÊNERO: " + listaFilmes.get(i).genero + "\n DURAÇÃO: " + listaFilmes.get(i).duracao + "\n-----------------------");
