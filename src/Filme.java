@@ -31,18 +31,26 @@ public class Filme {
         
          int codGerado;
          boolean codExiste = false;
+
          
         do{
-        
+
          codGerado = aleatory.nextInt(100000);
 
          for(int i = 0; i < listaFilmes.size(); i++){
-            if (listaFilmes.get(i).codigo == codGerado){
+
+           if(listaFilmes != null ){
+
+             if (listaFilmes.get(i).codigo == codGerado){
                codExiste = true;
-            }
+             }
+
+           }
+
          }
 
-        }while(codExiste = true);
+        }while(codExiste == true);
+        
 
         novoFilme.codigo = codGerado;
 
@@ -56,21 +64,24 @@ public class Filme {
         System.out.println("TÍTULO: " + novoFilme.titulo);
         System.out.println("GÊNERO: " + novoFilme.genero);
         System.out.println("DURAÇÃO: " + novoFilme.duracao);
+        System.out.println("CÓDIGO: " + novoFilme.codigo);
         System.out.println("----------------------------");
 
-        Menu.main(args);
 
         System.out.println("Adiconar mais filmes ? 1-sim, 2-não");
          int option = input.nextInt();
           if(option == 1){
             continuarAdicionandoFilmes = true;
           }else{
-            continuarAdicionandoFilmes = true;
+            continuarAdicionandoFilmes = false;
           }
 
-      }while(continuarAdicionandoFilmes = true);
+      }while(continuarAdicionandoFilmes == true);
+
 
       Filme.filmesEmCartaz(args);
+
+      Menu.main(args);
         
     }
 
@@ -85,6 +96,7 @@ public class Filme {
             System.out.println("TÍTULO: " + listaFilmes.get(i).titulo);
             System.out.println("GÊNERO: " + listaFilmes.get(i).genero);
             System.out.println("DURAÇÃO: " + listaFilmes.get(i).duracao);
+            System.out.println("CÓDIGO: " + listaFilmes.get(i).codigo);
             System.out.println("----------------------------");
          }
        }
@@ -109,10 +121,10 @@ public class Filme {
 
 
 
-    public static void filmesEmCartaz(String[] args){
+    public static void filmesEmCartaz(){
       
-      for(int i = 0; i <= listaFilmes.size(); i++){
-          System.out.print("-----------------------\nTÍTULO: " + listaFilmes.get(i).titulo + "\n GÊNERO: " + listaFilmes.get(i).genero + "\n DURAÇÃO: " + listaFilmes.get(i).duracao + "\n-----------------------");
+      for(int i = 0; i < listaFilmes.size(); i++){
+          System.out.print("   -----------------------\nTÍTULO: " + listaFilmes.get(i).titulo + "\n GÊNERO: " + listaFilmes.get(i).genero + "\n DURAÇÃO: " + listaFilmes.get(i).duracao + "\n CÓDIGO: " + listaFilmes.get(i).codigo + "\n   -----------------------");
       }
 
       System.out.println();
