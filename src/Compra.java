@@ -8,7 +8,7 @@ public class Compra {
     ArrayList<Compra> listaCompras = new ArrayList<>();
 
     Cliente cliente;
-    double precoIngresso;
+    int quantIngressos;
     Filme filme;
     int poltrona;
     int codigoCompra;
@@ -23,6 +23,8 @@ public class Compra {
        novaCompra.cliente.nome = input.nextLine();
       System.out.println("CPF:");
        novaCompra.cliente.cpf = input.nextLong();
+      System.out.println("( 5 ) - Remover Filme");
+       novaCompra.quantIngressos = input.nextInt();
       
       Filme.filmesEmCartaz();
       System.out.println("CODÍGO DO FILME:");
@@ -30,9 +32,13 @@ public class Compra {
   
       novaCompra.poltrona = Poltrona.selecionarPoltrona();
       
-      novaCompra.precoIngresso = Ingresso.getPreco();
-  
-      
+      novaCompra.valorTotalCompra = Ingresso.getPreco() * novaCompra.quantIngressos;     
+
+      System.out.println("CONFIRMAR COMPRA ? 1-SIM / 2-NÃO");
+       int option = input.nextInt();
+      if(option == 1){
+        System.out.println("Compra Realizada com Sucesso !");
+      }
        
     }
 
