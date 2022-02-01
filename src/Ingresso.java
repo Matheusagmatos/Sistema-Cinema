@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public abstract class Ingresso {
 
-    static double preco;
+    static private double preco;
 
     static Scanner input = new Scanner(System.in);
 
@@ -17,6 +17,10 @@ public abstract class Ingresso {
 
     public static double meiaEntrada(){
       return preco/2;
+    }
+
+    public static double getPreco(){
+      return preco;
     }
     
 }
