@@ -5,7 +5,8 @@ public class Menu {
   public static void main(String[] args) {
 
      Scanner input = new Scanner(System.in);
-
+    
+     //Menu Principal 
      System.out.println("--------------------------------"); 
      System.out.println("-------- SISTEMA CINEMA --------");
      System.out.println("--------------------------------");
