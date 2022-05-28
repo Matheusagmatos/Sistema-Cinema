@@ -19,7 +19,7 @@ public class Compra {
     /**
    * Método para efetuar compra.
    * <p>
-   * Coleta informações sobre o cliente, filme escolhido, poltrona e fianliza a compra.
+   * Coleta informações sobre o cliente, filme escolhido, poltrona e finaliza a compra.
    */
     public static void novaCompra(){
 
