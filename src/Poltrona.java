@@ -20,10 +20,12 @@ public abstract class Poltrona {
           }
        }
      } 
+
      
      public static int selecionarPoltrona(){
       boolean poltronaEscolhida = false;
       int numeroPoltrona = 0;
+      
       do{
 
        Poltrona.exibirPoltronas();

@@ -21,9 +21,11 @@ public class Menu {
      System.out.println("( 4 ) - Adicionar filme");
      System.out.println("( 5 ) - Remover Filme");
      System.out.println("( 6 ) - Alterar Preço do Ingresso");
+     System.out.println("( 7 ) - Cancelar Compra");
      System.out.println("--------------------------------");
 
      int option = input.nextInt();
+     int codigoDigitado;
      input.close();
 
      switch(option){
@@ -35,16 +37,44 @@ public class Menu {
              Filme.filmesEmCartaz();
 
          case 3:
-             Compra.infosCompra();
+             System.out.println("DIGITE O CÓDIGO DA COMPRA:");
+             codigoDigitado = input.nextInt();
+             Compra.infosCompra(codigoDigitado, args);
+             break;
 
          case 4:
-             Filme.adicionarFilme(args);
+             if(Administrador.acessoAdministrador() == true){
+                Filme.adicionarFilme(args);
+             }else{
+                Menu.main(args);
+             }
+             break;
 
          case 5:
-             Filme.removerFilme(args);
+             if(Administrador.acessoAdministrador() == true){
+                Filme.removerFilme(args);
+             }else{
+                Menu.main(args);
+             }
+             break;
 
          case 6:
-             Ingresso.alterarPreco();
+             if(Administrador.acessoAdministrador() == true){
+                Ingresso.alterarPreco();
+             }else{
+                Menu.main(args);
+             }
+             break;
+         
+         case 7:
+             if(Administrador.acessoAdministrador() == true){
+                System.out.println("DIGITE O CÓDIGO DA COMPRA:");
+                codigoDigitado = input.nextInt();
+                Compra.cancelarCompra(codigoDigitado, args);
+             }else{
+                Menu.main(args);
+             }
+             break;
 
      }
      
