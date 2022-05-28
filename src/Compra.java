@@ -16,7 +16,7 @@ public class Compra {
     private int codigoCompra;
     private double valorTotalCompra;
 
-    /**
+  /**
    * Método para efetuar compra.
    * <p>
    * Coleta informações sobre o cliente, filme escolhido, poltrona e finaliza a compra.
@@ -65,6 +65,14 @@ public class Compra {
        
     }
 
+    /**
+   * Método para cancelamento de compra.
+   * <p>
+   * Cancela a compra do cliente, removendo a compra da lista referente (listaCompras).
+   * 
+   * @param codigoCompra o código que foi gerado quando o cliente realizou a compra
+   * @param args para retornar ao método main
+   */
     public static void cancelarCompra(int codigoCompra, String[] args){
      for (Compra compra : listaCompras) {
        if(compra.codigoCompra == codigoCompra){
